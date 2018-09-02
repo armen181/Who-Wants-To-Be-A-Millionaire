@@ -2,9 +2,6 @@ package armen.springbootmillionaires.service;
 
 import armen.springbootmillionaires.DB.Questions;
 import armen.springbootmillionaires.util.QuestionForm;
-import org.aspectj.weaver.patterns.TypePatternQuestions;
-
-import java.util.List;
 
 public interface GameService {
 
@@ -14,8 +11,6 @@ public interface GameService {
 
 
     Questions getRandomQuestion(int maxElement);
-
-
 
 
     QuestionForm readQuestion(int id);

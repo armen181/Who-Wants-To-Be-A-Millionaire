@@ -6,11 +6,11 @@
             var settings = {
                 "async": true,
                 "crossDomain": true,
-                "url": "getQuestion",
+                "url": "startGame",
                 "method": "GET",
                 "headers": {
-                    "guess": bla,
-                    "radioButton": radioButton,
+                    // "guess": bla,
+                    //"radioButton": radioButton,
                 }
             }
 
