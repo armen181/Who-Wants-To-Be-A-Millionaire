@@ -65,15 +65,25 @@ public class GameController {
 
   }
 
+  @GetMapping("next")
+  public Questions getNextQuestion(){
+    newQuestion = messageService.getNextMessage();
+    return newQuestion;
+
+  }
+
   @PostMapping("answer")
   public Questions chackAnswer(@RequestHeader int answer) {
-    int status = messageService.getResultMessage(newQuestion, answer);
+    int ans = messageService.getResultMessage(newQuestion, answer);
 
-    if (status == 1) {
+    if (ans == 1) {
       newQuestion.setQuestionId("true");
       return newQuestion;
-    } else if (status == 0) {
-      newQuestion= gameService.make50_50(newQuestion);
+    } else if (ans == 0) {
+      if(!use50_50) {
+        use50_50 = true;
+        newQuestion = gameService.make50_50(newQuestion);
+      }
       return newQuestion;
     } else {
       newQuestion.setQuestionId("false");
