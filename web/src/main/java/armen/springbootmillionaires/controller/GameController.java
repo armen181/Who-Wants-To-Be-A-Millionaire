@@ -1,4 +1,4 @@
-package armen.springbootfirstprogram.controller;
+package armen.springbootmillionaires.controller;
 
 
 
